@@ -18,19 +18,23 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: Welcome to jonnymaserati's homepage!
-email: your-email@example.com
+title: Welcome to jonnymaserati's site!
+email: realjonnymaserati@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
-  The adventures of jonnymaserati in Wonderland
+  A site for sharing jonnymaserai's code.
 baseurl: / # the subpath of your site, e.g. /blog
 url: https://jonnymaserati.github.io # the base hostname & protocol for your site, e.g. http://example.com
 # twitter_username: jekyllrb
 github_username:  jonnymaserati
 avatar: https://avatars.githubusercontent.com/u/41046859?s=460&u=845b74e5ad4437fd1f6f2634b004b16bd0d2f48b&v=4
+show_excerpts: true
 
 # Build settings
-theme: jekyll-theme-cayman
+# theme: jekyll-theme-cayman
+theme: minima
 plugins:
+  - jekyll-octicons
+  - jekyll-github-metadata
   - jekyll-feed
 
 defaults:
