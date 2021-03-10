@@ -22,8 +22,8 @@ title: Welcome to jonnymaserati's homepage!
 email: your-email@example.com
 description: >- # this means to ignore newlines until "baseurl:"
   The adventures of jonnymaserati in Wonderland
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://jonnymaserati.github.io/" # the base hostname & protocol for your site, e.g. http://example.com
+baseurl: / # the subpath of your site, e.g. /blog
+url: https://jonnymaserati.github.io # the base hostname & protocol for your site, e.g. http://example.com
 # twitter_username: jekyllrb
 github_username:  jonnymaserati
 avatar: https://avatars.githubusercontent.com/u/41046859?s=460&u=845b74e5ad4437fd1f6f2634b004b16bd0d2f48b&v=4
@@ -32,6 +32,14 @@ avatar: https://avatars.githubusercontent.com/u/41046859?s=460&u=845b74e5ad4437f
 theme: jekyll-theme-cayman
 plugins:
   - jekyll-feed
+
+defaults:
+  -
+    scope:
+      path: "" # an empty string here means all files in the project
+      type: "posts"
+    values:
+      layout: "post"
 
 # Exclude from processing.
 # The following items will not be processed, by default.
