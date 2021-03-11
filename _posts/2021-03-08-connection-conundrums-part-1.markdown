@@ -31,6 +31,7 @@ url = 'https://www.tenaris.com/media/isfmuyog/tenarishydril-premium-connections-
 file = wget.download(url)
 
 ```
+## Importing some data
 We now have the catalogue downloaded and accessible through the file variable. Next we'll write a function for extracting tables from specific pages in a pdf document. This is written as a function as we may wish to call it several times for different connections, especially if the tables are not consistent throughout the document.
 
 ```python
@@ -58,6 +59,7 @@ def import_tables(file, pages):
     return tables
 
 ```
+## Processing the data
 It's time to process the data in the tables. To do this, we'll write a function that reads each line from the table, cleans it up into a common length array and appends the array to a list. Because this is the oilfield, we have to deal with fractions and need to write a function for interpreting a fraction and converting it to a float.
 
 First let's write that function for handling fractions, since this is a helper function to our data extraction function.
@@ -164,7 +166,8 @@ def extract_data(table, start_row=1, end_row=None):
             datas.append(data)
     return datas
 ```
-Before we write out main function, we're going to create a dictionary of table headers. This isn't ideal, but having reviewed the connections catalogue, the table headers have differences between the connections and I'd rather state these explicitly than rely on code to interpret them. Sometimes you just have to pull your sleeves up and get dirty.
+## Applying a template
+Before we write our main function, we're going to create a dictionary of table headers. This isn't ideal, but having reviewed the connections catalogue, the table headers have differences between the connections and I'd rather state these explicitly than rely on code to interpret them. Sometimes you just have to pull your sleeves up and get dirty.
 
 We'll structure the dictionary with the connection name as the main key followed by the page numbers in the catalogue where the associated tables are located. We'll then add a `headers` key where we'll list, in the correct order, the table headers we will assign to our imported data.
 
@@ -194,13 +197,14 @@ template = {
 }
 ```
 So now it's time for our main function. It's good practice to write your main code inside a function since it can help with debugging and you can then do some performance checking easier.
+## Tying together our code
 
 ```python
 def main():
     # initiate our catalogue dictionary
     catalogue = {}
 
-    # loop over out template dictionary we made with the table headers
+    # loop over our template dictionary we made with the table headers
     for k, v in template.items():
         # import the data
         data = []
@@ -216,7 +220,7 @@ def main():
             if len(d) == max(set(length), key=length.count)
         ]
         # just in case some rows with NaNs imported, we'll mask them off and
-        # filer them out of the data
+        # filter them out of the data
         mask = np.all(np.isnan(filtered_data), axis=1)
         catalogue[k] = np.vstack(np.array(filtered_data)[~mask])
 
@@ -224,13 +228,16 @@ def main():
 ```
 We're now ready to run it. This is done adding the following lines at the bottom of your script. I commonly add a simple `print` statement more to help me with debugging as it gives me somewhere to place a breakpoint in my editor.
 
+## Running the code
 ```python
 if __name__ == '__main__':
     catalogue = main()
 
 print("Done")
 ```
-Congratulations, we've just imported the data from the Tenaris Premium Connections catalogue for the Wedge 521 connection. If you want to QAQC the data you can do so with the help of [pandas](https://pandas.pydata.org/), creating a `DataFrame` with the following line of code:
+Congratulations, we've just imported the data from the Tenaris Premium Connections catalogue for the Wedge 521 connection.
+## Results
+If you want to QAQC the data you can do so with the help of [pandas](https://pandas.pydata.org/), creating a `DataFrame` with the following line of code:
 
 ```python
 df = pd.DataFrame(catalogue['Wedge 521'], columns=template['Wedge 521']['headers'])
@@ -240,8 +247,6 @@ Below is the first five rows of our freshly imported data, created with the help
 ```python
 print(df.head().to_markdown())
 ```
-
-
 
 |    |   size |   nominal_weight |   pipe_body_wall_thickness |   pipe_body_inside_diameter |   pipe_body_drift |   box_outside_diameter |   connection_inside_diameter |   make_up_loss |   critical_section_area |   tensile_efficiency |   compression_efficiency |   joint_yield_55 |   joint_yield_80 |   joint_yield_90 |   joint_yield_95 |   joint_yield_110 |   joint_yield_125 |
 |---:|-------:|-----------------:|---------------------------:|----------------------------:|------------------:|-----------------------:|-----------------------------:|---------------:|------------------------:|---------------------:|-------------------------:|-----------------:|-----------------:|-----------------:|-----------------:|------------------:|------------------:|
