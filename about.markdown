@@ -4,15 +4,8 @@ title: About
 permalink: /about/
 ---
 
-This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](https://jekyllrb.com/)
+[jonnymaserati][jonnymaserati] is a Wells Engineer who from 1998 to 2019 worked around the globe on various projects with Shell. In 2019, he decided to learn how to program in Shell because he wanted to automate well trajectory planning.
 
-You can find the source code for Minima at GitHub:
-[jekyll][jekyll-organization] /
-[minima](https://github.com/jekyll/minima)
+When not consulting as a Wells Engineer, he's writing code. Or walking his dog. Or playing Splatoon with his girls.
 
-You can find the source code for Jekyll at GitHub:
-[jekyll][jekyll-organization] /
-[jekyll](https://github.com/jekyll/jekyll)
-
-
-[jekyll-organization]: https://github.com/jekyll
+[jonnymaserati]: https://github.com/jonnymaserati
