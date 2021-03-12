@@ -247,6 +247,7 @@ Below is the first five rows of our freshly imported data, created with the help
 ```python
 print(df.head().to_markdown())
 ```
+<div class="table-wrapper" markdown="block">
 
 |    |   size |   nominal_weight |   pipe_body_wall_thickness |   pipe_body_inside_diameter |   pipe_body_drift |   box_outside_diameter |   connection_inside_diameter |   make_up_loss |   critical_section_area |   tensile_efficiency |   compression_efficiency |   joint_yield_55 |   joint_yield_80 |   joint_yield_90 |   joint_yield_95 |   joint_yield_110 |   joint_yield_125 |
 |---:|-------:|-----------------:|---------------------------:|----------------------------:|------------------:|-----------------------:|-----------------------------:|---------------:|------------------------:|---------------------:|-------------------------:|-----------------:|-----------------:|-----------------:|-----------------:|------------------:|------------------:|
@@ -255,6 +256,9 @@ print(df.head().to_markdown())
 |  2 |    4   |             11.6 |                      0.286 |                       3.428 |             3.303 |                  4.2   |                        3.353 |           3.62 |                   2.284 |                 68.4 |                     86.9 |              126 |              183 |              205 |              217 |               251 |               285 |
 |  3 |    4.5 |              9.5 |                      0.205 |                       4.09  |             3.965 |                  4.629 |                        4.04  |           2.74 |                   1.678 |                 60.7 |                     76.8 |               92 |              134 |              151 |              160 |               185 |               210 |
 |  4 |    4.5 |             10.5 |                      0.224 |                       4.052 |             3.927 |                  4.651 |                        3.976 |           3.62 |                   1.821 |                 60.5 |                     82.6 |              100 |              146 |              164 |              173 |               200 |               228 |
+
+</div>
+&nbsp;
 
 Now that we have some data, in the next post we'll use it to determine how many permutations of casing design exist!
 
