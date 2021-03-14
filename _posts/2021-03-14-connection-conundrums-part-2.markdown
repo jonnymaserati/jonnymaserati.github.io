@@ -12,7 +12,7 @@ There are 92 Wedge 521 connections in our newly created catalogue, ranging in si
 First, let's be clear what we mean by combine. For me, a valid combination is when one connection on pipe can pass through another connection on pipe. That means that the largest outer diameter of smaller size connection and pipe must be less than the drift of the larger coupling and pipe.
 
 ## That escalated quickly
-So, for each coupling, we need to test it against every other coupling to see if it will "drift". If there's 92 connections, that means we have to make \\( 92 \times 91 = 8,372 \\) checks to see which connection fits through what. Once we know what fits through what, we need to string together combinations of these pairs. Fortunately, there's a nice bit of maths that can help us here called [network theory].
+So, for each coupling, we need to test it against every other coupling to see if it will "drift". If there's 92 connections, that means we have to make 92 x 91 = 8,372 checks to see which connection fits through what. Once we know what fits through what, we need to string together combinations of these pairs. Fortunately, there's a nice bit of maths that can help us here called [network theory].
 
 ## Building relationships
 Fortunately, there are a number of Python implementations of network graphs but for this exercise we're going to use [networkx], simply because it's the simplest to install and easiest to work with. This comes at the cost of speed, but for the time being let's not worry about that.
