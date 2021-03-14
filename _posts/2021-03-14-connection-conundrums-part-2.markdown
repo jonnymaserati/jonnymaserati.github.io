@@ -59,10 +59,10 @@ class Counter:
 ```
 This counter will run in the background and we can call it for a new UID each time we create a node for our graph and assign that UID to the new node.
 
-To initiate a new graph, which we'll call `G`, we use the following code:
+To initiate a new graph, which we'll call `graph`, we use the following code:
 
 ```python
-G = nx.DiGraph()
+graph = nx.DiGraph()
 ```
 
 ## Adding vertices (nodes)
