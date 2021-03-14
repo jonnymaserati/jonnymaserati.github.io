@@ -17,7 +17,7 @@ So, for each coupling, we need to test it against every other coupling to see if
 ## Building relationships
 Fortunately, there are a number of Python implementations of network graphs but for this exercise we're going to use [networkx], simply because it's the simplest to install and easiest to work with. This comes at the cost of speed, but for the time being let's not worry about that.
 
-You'll need to install [nextorkx] in your Python env with the following terminal command:
+You'll need to install [networkx] in your Python env with the following terminal command:
 ```
 pip install networkx
 ```
