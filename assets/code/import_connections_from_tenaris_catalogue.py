@@ -1,11 +1,16 @@
 import camelot
+from pathlib import Path
 import wget
 import numpy as np
 import pandas as pd
 
 # the URL for the Tenaris catalogue so I can claim I'm not copying anything
 url = 'https://www.tenaris.com/media/isfmuyog/tenarishydril-premium-connections-catalog.pdf'
-file = wget.download(url)
+
+# check if the catalogue has already been downloaded
+file = "tenarishydril-premium-connections-catalog.pdf"
+if not Path(file):
+    file = wget.download(url)
 
 # I'm not proud of manually typing these headers - and if this must
 # be done it'd be better to place all this inside a yaml file and import it
@@ -155,6 +160,7 @@ def main():
     # loop over out template dictionary we made with the table headers
     for k, v in template.items():
         # import the data
+        catalogue[k] = {}
         data = []
         temp = import_tables(file, pages=v['pages'])
         # process the data
@@ -170,11 +176,12 @@ def main():
         # just in case some rows with NaNs imported, we'll mask them off and
         # filer them out of the data
         mask = np.all(np.isnan(filtered_data), axis=1)
-        catalogue[k] = np.vstack(np.array(filtered_data)[~mask])
+        catalogue[k]['data'] = np.vstack(np.array(filtered_data)[~mask])
+        catalogue[k]['headers'] = v['headers']
 
     return catalogue
 
 if __name__ == '__main__':
     catalogue = main()
 
-print("Done")
+    print("Done")
