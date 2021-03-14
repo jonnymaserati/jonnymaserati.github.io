@@ -241,7 +241,7 @@ def main():
     return graph
 ```
 ## Results
-To run the above script, we can add the following at the bottom of our`.py` file:
+To run the above script, we can add the following at the bottom of our `.py` file:
 ```python
 if __name__ == '__main__':
     graph = main()
