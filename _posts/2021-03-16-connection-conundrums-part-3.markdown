@@ -19,7 +19,7 @@ We can now generate our graph object with the following line:
 graph = create_casing_connections_graph.main()
 ```
 ## Roots and leaves
-So let's answer the original question from part 1. To do this, we're going to assume that we're interested in only using these Tenaris Wedge 521 connections and that our surface casing size is 18 5/8". We need a function that will identify all our *root* nodes/vertices (i.e. our 18 5/8" surface casing connections) and find all the paths to all the *leaf* nodes/vertices (which may be the completion tubing connection).
+So let's answer the original question from part 1. To do this, we're going to assume that we're interested in only using these Tenaris Wedge 521 connections and that our surface casing size is 18 5/8". We need a function that will identify all our *root* nodes/vertices (i.e. our 18 5/8" surface casing connections) and find all the paths to all the *leaf* nodes/vertices (which might be the completion tubing connection or the production liner connection).
 
 A bit of background on graphs: the *in_degree* is the number of *edges* that lead into a *node/vertex*, while the *out_degree* is the number of *edges* that lead out of a *node/vertex*. A *root* has no *edges* leading into it and a *leaf* has no *edges* leading out of it. Think of a tree, with a root, branches and leaves.
 
@@ -49,7 +49,7 @@ Running the above function will return two lists, the first is the roots and the
 >>> [graph.nodes[l]['size'] for l in leaves]
 [4.0, 4.0, 4.0, 4.5, 4.5, 4.5, 4.5, 4.5, 4.5, 7.625, 7.625, 7.625, 7.625, 7.625]
 ```
-So we have 7 flavors of 18 5/8" casing connections for our *roots* and 14 *leaves*, ranging from 4" to 7 5/8". We'll use a bit of `numpy` to create our input array, which is all the permutations of *roots* and *leaves* (which is 7 x 14 = 98)
+So we have 7 flavors of 18 5/8" casing connections for our *roots* and 14 *leaves*, ranging from 4" to 7 5/8". We'll use a bit of `numpy` to create our input array, which is all the permutations of *roots* and *leaves* (that's 7 x 14 = 98)
 
 ```python
 input = np.array(
@@ -66,7 +66,7 @@ def get_paths(graph, source, target):
     paths = [path for path in nx.all_simple_paths(graph, source, target)]
     return paths
 ```
-We can then use out `input` array to feed our `get_paths()` function:
+We can then use our `input` array to feed our `get_paths()` function:
 ```python
 paths = [
     get_paths(graph, s, t)
@@ -146,6 +146,7 @@ Time to run it!
 One of the nice features of ray is that it serves a dashboard which can be viewed via your web browser (you'll be provided with a link with the local address and port that you can click on, the default is http://127.0.0.1:8265). By default, ray will utilize all of the available cores on your machine, which in my case is 12 as you can see from the screenshot below - it's satisfying to know that your hurting your processor.
 
 ![image info](/assets/images/ksnip_20210317-084143.png)
+
 Setting my enthusiasm for ray aside, the answer to the ultimate question is not 42 as you might have expected, but rather:
 
 **5,080,320**
