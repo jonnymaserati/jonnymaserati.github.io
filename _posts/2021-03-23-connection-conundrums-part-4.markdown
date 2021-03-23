@@ -3,7 +3,7 @@ layout: post
 title:  "Connection Conundrums - Part 4"
 tags: python wells drilling casing connections engineering data
 ---
-In [part 3]({% post_url 2021-03-14-connection-conundrums-part-3 %}) we used our network graph to determine all of the permutations of casing designs that can be generated with the Tenaris Wedge 521 connections range. We observed that from these 92 casing connections we can produce over 5 million unique casing designs and that using [networkx] which is written in Python code and despite multiprocessing with [ray].
+In [part 3]({% post_url 2021-03-16-connection-conundrums-part-3 %}) we used our network graph to determine all of the permutations of casing designs that can be generated with the Tenaris Wedge 521 connections range. We observed that from these 92 casing connections we can produce over 5 million unique casing designs and that using [networkx] which is written in Python code and despite multiprocessing with [ray].
 
 In this post, we're going to switch to a faster implementation of network graphs that utilizes C/C++ in the back-end and stores the attributes as [numpy] arrays which will allow us to efficiently filter our nodes and generate sub-graphs only containing the nodes that our relevant for our application.
 
