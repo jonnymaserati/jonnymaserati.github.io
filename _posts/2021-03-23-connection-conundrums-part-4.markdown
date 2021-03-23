@@ -535,7 +535,7 @@ Almost there... we're down to only **8** remaining casing design concepts.
 
 Returning to our list, we find that refinement number 4 is now redundant since we made a decision not to run a contingency surface casing extension. So let's think of something else - since we're down to a single drilling liner contingency design, how about we minimize risk by selecting the design that offers us the maximum clearance between casing couplings, to potentially reduce sway and surge pressures and to improve the *Probability of Success (POS)* during our casing cementations?
 
-We can write a quick little helper function for this and then call it for each of our paths:
+We can write a quick little helper function for this and then call it for each of our paths and finally use these results to find our preferred design:
 
 ```python
 def get_clearance(graph, path):
@@ -552,10 +552,21 @@ def get_clearance(graph, path):
 clearance = [
     get_clearance(graph, p)
     for p in paths_filtered_production_casing_wt_max
+
+selected_concept = paths_filtered_production_casing_wt_max[
+        np.argmax(clearance)
+    ]
 ]
 ```
+Below is a chart displaying our results: the nodes are the connections and the edges represent the feasible paths from our source 18 5/8" connection to our target connection(s) with at least 6.2" inner diameter (interesting how this resolved to a single target connection). The red path is the one with the maximum total clearance that we've defined as being our preferred path.
 
-Feel free to [download the code](/assets/code/play_with_connections_graph.py).
+![image info](/assets/images/2021-03-23-chart-for-connections-graph.png)
+
+Congratulations, by constraining the option space and applying some filtering you've managed to collapse the casing design possibilities down from millions to one! Imagine if we could add not only additional casing connections, but well equipment like wellheads and their hangers, liner hangers, cross-overs and completion equipment. We'd then be able to create a method or workflow that would lead to determining a standardized well design architecture, one that's repeatable and that demonstrably considers all permutations within a given given option space.
+
+If only the equipment specifications were accessible.
+
+Feel free to [download the code](/assets/code/create_casing_connections_graph_2.py), which included the function for generating the above chart.
 
 [networkx]: https://networkx.org/
 [ray]: https://ray.io/
