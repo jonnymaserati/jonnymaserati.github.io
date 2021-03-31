@@ -285,6 +285,10 @@
       @include relative-font-size(1.0625);
     }
   }
+
+  .table-wrapper {
+    overflow-x: scroll;
+  }
   
   
   .social-media-list {
