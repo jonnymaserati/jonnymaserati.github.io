@@ -37,6 +37,7 @@ plugins:
   - jekyll-octicons
   - jekyll-github-metadata
   - jekyll-feed
+  - jekyll-seo-tag
 
 defaults:
   -
@@ -45,6 +46,11 @@ defaults:
       type: "posts"
     values:
       layout: "post"
+
+minima:
+  social_links:
+    linkedin: jonnycorcutt
+    github: jonnymaserati
 
 # Exclude from processing.
 # The following items will not be processed, by default.
