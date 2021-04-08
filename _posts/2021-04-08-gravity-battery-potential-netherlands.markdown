@@ -3,7 +3,7 @@ layout: post
 title:  "Gravity Battery Potential in the Netherlands"
 tags: python wells drilling casing engineering economics energy storage battery renewable solar wind LCOS levelized cost
 ---
-Following on from the [previous post]({% post_url 2021-04-01-gravity-battery-well %}) that presented the Gravity Well as an energy storage concept, some further digging determined that the potential energy storage capacity using existing wells located in the Netherlands is **480 MWh** of storage capacity.
+Following on from the [previous post]({% post_url 2021-04-01-gravity-battery-well %}) that presented the Gravity Well as an energy storage concept, some further digging determined that the potential energy storage capacity using existing wells located in the Netherlands is **480 MWh**.
 
 This post will describe how this number was derived and conclude with some perspective.
 
