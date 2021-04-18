@@ -36,6 +36,11 @@ The second entry in the dictionary above is back calculated from the example in 
 
 Let's start writing that class:
 ```python
+import math
+from scipy.optimize import minimize
+from numba import njit
+import numpy as np
+
 class Fluid:
     def __init__(
         self,
