@@ -1,6 +1,7 @@
 ---
 layout: post
 title:  "Why Engineers should use Python"
+author: Jonny Corcutt
 tags: python engineering ethereum ETH mining phoenix visualization crypto log plotly
 ---
 ![image](/assets/images/joseph-greve-D_1-g2eLho8-unsplash.jpg)
