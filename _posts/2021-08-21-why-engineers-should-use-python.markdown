@@ -51,7 +51,7 @@ Looking at the log file when the [PhoenixMiner] application is initializing, rev
 2021.08.19:07:43:10.716: main GPU3: Radeon RX Vega (pcie 10), OpenCL 2.0, 8 GB VRAM, 56 CUs
 2021.08.19:07:43:10.716: main GPU4: Radeon RX Vega (pcie 13), OpenCL 2.0, 8 GB VRAM, 56 CUs
 ```
-Here we can use the **main Available GPUs for mining"** tag as a trigger to start counting the number of GPUs. It might also be possible to see how many **GPUx** tags there are, but knowing how the configuration file works for [PhoenixMiner], some users may not be running all their GPUs and so the indexing might not be transparent.
+Here we can use the **main Available GPUs for mining** tag as a trigger to start counting the number of GPUs. It might also be possible to see how many **GPUx** tags there are, but knowing how the configuration file works for [PhoenixMiner], some users may not be running all their GPUs and so the indexing might not be transparent.
 
 Let's start coding...
 
@@ -212,7 +212,7 @@ Next, we can add keys and their values to out dictionary and return the dictiona
 ## Rinse, Wash, Repeat
 The beauty of writing modular code is that once it's working for one instance, it can then be used for every instance. By writing a function to conditionally process a row from a log file, we can then iterate through the log file and keep re-using the function, row by row.
 
-This is precisely what out `import_data()` function is doing, pushing each row to the appropriate function for processing, receiving back a bit of dictionary with it them appends to a main dictionary - since our time stamps are unique then there's no risk of overwriting entries in the main dictionary.
+This is precisely what our `import_data()` function is doing, pushing each row to the appropriate function for processing, receiving back a bit of dictionary which it then appends to a main dictionary - since our time stamps are unique then there's no risk of overwriting entries in the main dictionary.
 
 ## Reformat extracted data
 Once the data of interest is extracted from the log file, it's time to generate a table that we can use to create our charts. For simplicity, we'll use the [pandas] library for this:
@@ -242,7 +242,7 @@ def data_to_df(data):
 
     return df
 ```
-First step is to create a(n ordered) list of headers that we'll use as the column headers in our [pandas] `DataFrame` instance. We'll use a helper function for this that we send our dictionary of data to and receive back a list of all the data keys. This list is pre-populated with *time* and *gpu* as we **know** that these variables are in the data, but otherwise this function is written to have no pre-conceptions, so can accommodate future updates to the code where additional metrics might be extracted from the log data.
+First step is to create a(n ordered) list of headers that we'll use as the column headers in our [pandas] `DataFrame` instance. We'll use a helper function for this that we send our dictionary of data to and receive back a list of all the data keys. This list is pre-populated with *time* and *gpu* as we *know* that these variables are in the data, but otherwise this function is written to have no pre-conceptions, so can accommodate future updates to the code where additional metrics might be extracted from the log data.
 
 Note that `copy` is used when appending `temp` to `arr` - if you want to know why then read up on **mutable versus immutable**.
 
@@ -276,7 +276,7 @@ Perhaps now is a good time to see what our `data` dictionary looks like? One of 
    3: {'rate': 0.0, 'unit': 'MH/s'},
    4: {'rate': 0.0, 'unit': 'MH/s'}})]
 ```
-Here we import [pprint](https://docs.python.org/3/library/pprint.html) and use it to print the first two entries of the `data` dictionary. Each entry in the dictionary has a unique time stamp as the key and there's a dictionary within each entry. Each subitem has a key referenced to the GPU number and there's either hash rate data **or** performance data for each GPU along with unit information.
+Here we import [pprint](https://docs.python.org/3/library/pprint.html) and use it to print the first two entries of the `data` dictionary. Each entry in the dictionary has a unique time stamp as the key and there's a dictionary within each entry. Each subitem has a key referenced to the GPU number and there's either hash rate data *or* performance data for each GPU along with unit information.
 
 So back to our `data_to_df()` function, for each time stamp, we iterate through each GPU and extract the data to the correct index of our `temp` row (using the `header` list to lookup the index). Once the `temp` row is constructed, we append it to our `arr` list and move to the next `data` entry, repeating until we've iterated through the entire `data` dictionary.
 
@@ -343,9 +343,9 @@ def plot(df):
 ```
 We're using `make_subplots` to generate a chart for each GPU, with a single column of charts. We define up front what `traces` we want to plot and the color associated to each, so that we can be consistent in every subplot.
 
-Using the `for` loops, we slice up our `df` to create a view each GPU's data. For each view, we cycle through and extract the `trace` column, skipping any `None` or `NaN` values in the column. Once we've sliced our `trace` data, we add it to the appropriate subplot of our `fig` object, using out `traces` dictionary to assign the correct color. We also assign the legend to the appropriate GPU chart... currently [plotly] isn't the best visualization tool for handling legends on subplots, but I'm sure they're working on that.
+Using the `for` loops, we slice up our `df` to create a view of each GPU's data. For each view, we cycle through and extract the `trace` column, skipping any `None` or `NaN` values in the column. Once we've sliced our `trace` data, we add it to the appropriate subplot of our `fig` object, using out `traces` dictionary to assign the correct color. We also assign the legend to the appropriate GPU chart... currently [plotly] isn't the best visualization tool for handling legends on subplots, but I'm sure they're working on that.
 
-Once the charts have been generated, the `fig.layout` is updated to set the height of the chart and position the legends in the correct location. A **plotly_dark** `template` is assigned to make it look pretty and a bit more *hacker* looking.
+Once the charts have been generated, the `fig.layout` is updated to set the height of the chart and position the legends in the correct location. A *plotly_dark* `template` is assigned to make it look pretty and a bit more *hacker* looking.
 
 Finally, the y-axis ranges are set manually to be the same for each subplot.
 
