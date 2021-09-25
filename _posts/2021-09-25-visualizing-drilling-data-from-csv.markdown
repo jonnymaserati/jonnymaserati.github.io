@@ -160,7 +160,7 @@ fig = make_subplots(
 
 You see we're using `plotly`'s `subplots` here so that we can visualize the traces as columns, where we define a single `row` with the number of `cols` defined by the number of traces that we have. We want all the traces to align on the time index, so we set `shared_yaxes=True` and we already pass the names of each trace with `subplot_titles=traces`.
 
-Time to write the data to the `fig`. We'll to this with a simple `for` loop since there's not many traces to loop through.
+Time to write the data to the `fig`. We'll do this with a simple `for` loop since there's not many traces to loop through.
 
 ```python
 for i, t in enumerate(traces):
