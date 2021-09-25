@@ -204,7 +204,7 @@ That's it! We've generated our `fig` and now just need to `show` it with the fol
 fig.show()
 ```
 
-Which will by default render the `fig` to your default web browser.
+Which will render the `fig` to your default web browser.
 
 ![image](/assets/images/2021-09-25-visualization-of-realtime-drilling-data.png)
 
