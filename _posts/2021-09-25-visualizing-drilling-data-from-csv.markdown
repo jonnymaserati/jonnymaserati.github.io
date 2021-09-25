@@ -141,7 +141,7 @@ I find that really cool... resampling all that data with a single, simple line o
 
 That's all we're going to do to the data. Time to plot.
 
-## Data Visualization
+## Visualize the Data
 First, we'll make a list of the trace names which we get from the `DataFrame` column headings.
 
 ```python
