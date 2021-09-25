@@ -1,0 +1,12 @@
+iscwsa_1:
+  header:
+    latitude: 60
+    longitude: 2
+    G: 9.80665
+    b_total: 50_000
+    dip: 72
+    declination: -4
+    depth_unit: 'meters'
+  md: [0, 1200, 2100, 5100, 5400, 8000]
+  inc: [0, 0, 60, 60, 90, 90]
+  azi: []
