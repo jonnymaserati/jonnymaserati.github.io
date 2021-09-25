@@ -11,7 +11,7 @@ Photo by <a href="https://unsplash.com/@wizwow?utm_source=unsplash&utm_medium=re
 Following a [question](https://www.linkedin.com/posts/michal-szlachta-3b166327_does-anyone-know-a-quick-way-to-plot-time-based-activity-6846370152729088001-iJcw) on LinkedIn, here's a quick post on how to import realtime drilling data from a large `csv` file and quickly visualize the data using [plotly]. The intent is to show how quick and easy realtime drilling data can be visualized using Python - this is not intended as a polished end product. It took about 30 mins to program this from scratch, including Googling.
 
 ## Get the Data
-To save myself the hassle of getting the [WITSML](https://en.wikipedia.org/wiki/Wellsite_information_transfer_standard_markup_language) data from Equinor's Volve dataset and then parsing it into a `csv` file, I did I quick Google search and found that some kind person had already done it. Get your data from [here](https://www.ux.uis.no/~atunkiel/file_list.html) (although I think they might be hosting it on a private server, so please don't abuse)
+To save myself the hassle of getting the [WITSML](https://en.wikipedia.org/wiki/Wellsite_information_transfer_standard_markup_language) data from Equinor's [Volve] dataset and then parsing it into a `csv` file, I did I quick Google search and found that some kind person had already done it. Get your data from [here](https://www.ux.uis.no/~atunkiel/file_list.html) (although I think they might be hosting it on a private server, so please don't abuse)
 
 ## QAQC the Data
 I have to say, this is a quick, rush job and the quickest way I find to QAQC this sort of data is with a spreadsheet (in my case [LibreOffice Calc](https://www.libreoffice.org/discover/calc/) since I use Ubuntu). For the data file I downloaded, many of the traces are blank, so I quickly made a list of the ones that have data and then commented out the ones that I'm not interested in.
@@ -210,11 +210,8 @@ Which will render the `fig` to your default web browser.
 
 And of course, the beauty of using [plotly] is that the graph is interactive.
 
-<video autoplay="autoplay" loop="loop" width="768" height="512">
-  <source src="/assets/videos/2021-09-25-visualization-of-drilling-data.mp4" type="video/mp4">
-</video>
-
 As usual, the Python script is available to use [here](/assets/code/realtime_dd_columns.py).
 
 [pandas]: https://pandas.pydata.org/
 [plotly]: https://plotly.com/
+[Volve]: https://www.equinor.com/en/what-we-do/digitalisation-in-our-dna/volve-field-data-village-download.html
