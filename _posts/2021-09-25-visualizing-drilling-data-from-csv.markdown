@@ -16,6 +16,7 @@ To save myself the hassle of getting the [WITSML](https://en.wikipedia.org/wiki/
 ## QAQC the Data
 I have to say, this is a quick, rush job and the quickest way I find to QAQC this sort of data is with a spreadsheet (in my case [LibreOffice Calc](https://www.libreoffice.org/discover/calc/) since I use Ubuntu). For the data file I downloaded, many of the traces are blank, so I quickly made a list of the ones that have data and then commented out the ones that I'm not interested in.
 
+## Import the Data
 Let's start coding... here's the libraries we're going to use:
 
 ```python
