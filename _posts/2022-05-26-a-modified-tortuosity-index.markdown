@@ -3,7 +3,7 @@ layout: post
 title:  "A Modified Tortuosity Index"
 author: Jonny Corcutt
 tags: python well drilling torque drag engineering visualization plotly
-use_math: true
+usemathjax: true
 ---
 ![image](/assets/images/chris-henry-YOEPow9w9Hk-unsplash.jpg)
 Photo by [Chris Henry](https://unsplash.com/es/@chrishenryphoto?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/winding-road?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
