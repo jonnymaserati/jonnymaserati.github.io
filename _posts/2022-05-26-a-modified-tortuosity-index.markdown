@@ -3,7 +3,7 @@ layout: post
 title:  "A Modified Tortuosity Index"
 author: Jonny Corcutt
 tags: python well drilling torque drag engineering visualization plotly
-usemathjax: true
+use_math: true
 ---
 ![image](/assets/images/chris-henry-YOEPow9w9Hk-unsplash.jpg)
 Photo by [Chris Henry](https://unsplash.com/es/@chrishenryphoto?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/winding-road?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
@@ -21,7 +21,7 @@ The Tortuosity Index method that is generally used in the Drilling community is 
 
 The generally accepted equation for the drilling ***Tortuosity Index (TI)*** is:
 
-\[TI_{inc/azi} = \frac{n}{n + 1} \frac{1}{L_{c}}\sum_{i = 1}^{n}\left(\frac{L_{csi}}{L_{xsi}} - 1\right]\]
+$$TI_{inc/azi} = \frac{n}{n + 1} \frac{1}{L_{c}}\sum_{i = 1}^{n}\left(\frac{L_{csi}}{L_{xsi}} - 1\right]$$
 
 $$TI_{3D} = \sqrt{\left(TI_{inc}\right)^{2} + \left(TI_{azi}\right)^{2}}$$
 
