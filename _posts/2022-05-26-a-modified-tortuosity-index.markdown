@@ -117,7 +117,7 @@ The lack of normal vectors on the remainder of the well path indicates hold sect
 
 With the normals calculated, we can now iterate through them in order to determine *curve turn* and *hold* sections. This is comparing the normal vector of node **n + 1** with the previous normal vector of node **n**.
 
-With Python, this can be achieved with the following code, where `survey` is a [welleng] `Survey` instance with a `normals` property:
+With [Python], this can be achieved with the following code, where `survey` is a [welleng] `Survey` instance with a `normals` property:
 ```python
 import numpy as np
 
@@ -134,14 +134,14 @@ The above could also be implemented with [Python]'s built in functions, but it's
   1. The `survey.normals` are being split into two lists which represent the *point A* and *point B* nodes, i.e. pairs of adjacent trajectory stations.
   2. We mentioned earlier that there's no solution to a cross product of two identical vectors (or rather there's an infinite number of solutions), which means that for *hold* sections of the trajectory, the normal vectors are [nan, nan, nan] (i.e. a 1,3 matrix of *not a number*). Since these are not numbers, we need to provide an instruction on how to deal with these, so the parameter `equql_nan` states that if there's a pair of nans then we treat them as being equal to each other.
   3. Now we have the requisite parameters for the [numpy.isclose](https://numpy.org/doc/stable/reference/generated/numpy.isclose.html) function, which *"Returns a boolean array where two arrays are element-wise equal within a tolerance"* - ***note:*** we've not provided a tolerance in this example because it's a planned trajectory with precise numbers, but for as drilled surveys the likelihood of two sections being continuous with the default tolerance values is practically zero, but we'll discuss this later.
-  4. The result of the `numpy.isclose` function is an (n,3) boolean aray (i.e. [True, True, True] if the pairs of normal vectors), but we're interested in the whether all of the elements are equal so we use the [`numpy.all`](https://numpy.org/doc/stable/reference/generated/numpy.all.html) function to check each boolean matrix and see if all three values are *True* - the `axis=-1` parameter instructs the function to check row-wise, i.e. a single boolean for each pair of normal vectors.
+  4. The result of the `numpy.isclose` function is an (n,3) boolean aray (i.e. [True, True, True] of the pairs of normal vectors), but we're interested in the whether all of the elements are equal so we use the [`numpy.all`](https://numpy.org/doc/stable/reference/generated/numpy.all.html) function to check each boolean matrix and see if all three values are *True* - the `axis=-1` parameter instructs the function to check row-wise, i.e. a single boolean for each pair of normal vectors.
 
 The above operations are summarized in the flowchart below:
 
 ![image](/assets/images/2022-05-26-flowchart-normal-continuity.png)
 ***Flowchart describing the process of determining a well path's curve turn continuity from its vectors (inclination and azimuth)** - continuity is considered true when the elements of a survey station's normal vector are all equal to the normal of the previous survey station's normal vector.*
 
-We now have a one-dimensional boolean array which we can index against the survey and for each survey station, determine if it continues the current *curve turn* or *hold* section. Where the continuity array is *False* indicates the end of the curve turn or hold section and the start of a new one, so counting the number of *False* elements in the array indicates the number of sections in the well, which is the ***n*** value in the ***TI*** equation.
+We now have a one-dimensional boolean array which we can index against the survey and for each survey station and determine if it continues the current *curve turn* or *hold* section. Where the continuity array is *False* indicates the end of the curve turn or hold section and the start of a new one, so counting the number of *False* elements in the array indicates the number of sections in the well, which is the ***n*** value in the ***TI*** equation.
 
 Systematically taking the index of the *False* values in the continuity array, we can find the position and the measured depth at the end of each *curve turn* or *hold* section and use these values to calculate the ***L<sub>c</sub>***, ***L<sub>ci</sub>*** and ***L<sub>xi</sub>*** values in the ***TI*** equation in the knowledge that they're now mathematically robust numbers.
 
