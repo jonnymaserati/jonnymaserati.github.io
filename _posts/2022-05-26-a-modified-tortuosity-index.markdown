@@ -4,13 +4,13 @@ title:  "A Modified Tortuosity Index"
 author: Jonny Corcutt
 tags: python well drilling torque drag engineering visualization plotly
 ---
+![image](/assets/images/chris-henry-YOEPow9w9Hk-unsplash.jpg)
+Photo by [Chris Henry](https://unsplash.com/es/@chrishenryphoto?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/winding-road?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
+
 ## Summary
 The Drilling ***Tortuosity Index (TI)*** is a useful method for determining the relative complexity of a well trajectory and as a *Key Performance Indicator (KPI)* when assessing well quality.
 
-This post describes the ***Modified Tortuosity Index (MTI)*** that proposes modifications to the ***Tortuosity Index*** to make it mathematically correct and dimensionless and provides details and data on how to apply the method using the [Python] library [welleng].
-
-![image](/assets/images/chris-henry-YOEPow9w9Hk-unsplash.jpg)
-***Photo by [Chris Henry](https://unsplash.com/es/@chrishenryphoto?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/winding-road?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)***
+This post describes the ***Modified Tortuosity Index (MTI)*** that proposes modifications to the ***Tortuosity Index*** to make it inherently three-dimensional and dimensionless and provides details and data on how to apply the method using the [Python] library [welleng].
 
 ## Disclaimer
 The following method is experimental and has yet to be thoroughly tested - the work presented is that of an enthusiastic amateur, with no professional or otherwise affiliations. As such, please use with caution and do your own research and testing - my only request is that, in the spirit of [open source](https://en.wikipedia.org/wiki/Open_source) that you report back your own findings either via the comments below or via the [welleng] repository. The license is permissive - the only requirement is that you reference the source if you use the method or code.
@@ -18,14 +18,14 @@ The following method is experimental and has yet to be thoroughly tested - the w
 ## Background
 The Tortuosity Index method that is generally used in the Drilling community is derived from the medical industry. This method was adapted and developed for well trajectories by **Pradeep Ashok et al** at The University of Texas and presented at the [International Association of Directional Drilling](https://www.iadd-intl.org/media/files/files/47d68cb4/iadd-luncheon-february-22-2018-v2.pdf). Several SPE papers on the subject have subsequently been published.
 
-The generally acceted equation for the drilling ***Tortuosity Index (TI)*** is:
+The generally accepted equation for the drilling ***Tortuosity Index (TI)*** is:
 
 $$TI_{inc/azi} = \frac{n}{n + 1} \frac{1}{L_{c}}\sum_{i = 1}^{n}\left(\frac{L_{csi}}{L_{xsi}} - 1\right)$$
 $$TI_{3D} = \sqrt{\left(TI_{inc}\right)^{2} + \left(TI_{azi}\right)^{2}}$$
 
 where ***n*** is the number of curve turns, ***L<sub>csi</sub>*** is the arc length of the curve turn, ***L<sub>xsi</sub>*** is the chord length of the curve turn and ***L<sub>c</sub>*** is the total curve length.
 
-The method states that calculating the ***TI*** for the curvature in the inclination and azimuth domains enables the three dimensional ***TI<sub>3D</sub>*** to be calculated by taking the root of the squares of the  ***TI<sub>Incl</sub>*** and  ***TI<sub>Azm</sub>***. For this to hold, when calculating ***TI<sub>Incl</sub>*** and ***TI<sub>Azm</sub>***, only the inclination and azimuth components of the curves should be considered for ***L<sub>csi</sub>***, ***L<sub>xsi</sub>*** and ***L<sub>c</sub>***, else   ***TI<sub>Incl</sub>*** and   ***TI<sub>AZM</sub>*** are **not** independent and as such, the current application of the ***TI*** is not mathematically correct, although whether this is practically signficant is out of scope here.
+The method states that calculating the ***TI*** for the curvature in the inclination and azimuth domains enables the three dimensional ***TI<sub>3D</sub>*** to be calculated by taking the root of the squares of the  ***TI<sub>Incl</sub>*** and  ***TI<sub>Azm</sub>***. For this to hold, when calculating ***TI<sub>Incl</sub>*** and ***TI<sub>Azm</sub>***, only the inclination and azimuth components of the curves should be considered for ***L<sub>csi</sub>***, ***L<sub>xsi</sub>*** and ***L<sub>c</sub>***, else   ***TI<sub>Incl</sub>*** and   ***TI<sub>AZM</sub>*** are **not** independent and as such, the current application of the ***TI*** is not mathematically correct, although whether this is practically significant is out of scope here.
 
 ## Definition of a Curve Turn
 The [presentation] does a good job of describing a two-dimensional curve, but what if we can skip trying to merge two two dimensional curves and consider a curve turn directly in three-dimensions?
@@ -97,7 +97,7 @@ In order to split the well into sections, we'll need to determine the normals. T
 ```console
 >>> survey.normals
 ```
-Reviewing the array of normal vectors reveals that for the tangent sections of the well there are *no* normal vectors on account of there being no solution to a cross product of identical vectors. This is a useful result as it allows up to include these tangent sections as descrete curve turns (with infinite radius) where the arc length is equal to the chord length.
+Reviewing the array of normal vectors reveals that for the tangent sections of the well there are *no* normal vectors on account of there being no solution to a cross product of identical vectors. This is a useful result as it allows up to include these tangent sections as discrete curve turns (with infinite radius) where the arc length is equal to the chord length.
 
 Below is a plot of the well path with the curve turn normals added:
 
@@ -128,13 +128,13 @@ continuous = np.all(
     ), axis=-1
 )
 ```
-The above could also be implemented with [Python]'s built in functions, but it's simpler (and possibly faster for larger surveys) to use [numpy] which achieves the operation in a single line of code. For transparacy, it's worth walking through what the operation is doing.
+The above could also be implemented with [Python]'s built in functions, but it's simpler (and possibly faster for larger surveys) to use [numpy] which achieves the operation in a single line of code. For transparency, it's worth walking through what the operation is doing.
   1. The `survey.normals` are being split into two lists which represent the *point A* and *point B* nodes, i.e. pairs of adjacent trajectory stations.
   2. We mentioned earlier that there's no solution to a cross product of two identical vectors (or rather there's an infinite number of solutions), which means that for *hold* sections of the trajectory, the normal vectors are [nan, nan, nan] (i.e. a 1,3 matrix of *not a number*). Since these are not numbers, we need to provide an instruction on how to deal with these, so the parameter `equql_nan` states that if there's a pair of nans then we treat them as being equal to each other.
   3. Now we have the requisite parameters for the [numpy.isclose](https://numpy.org/doc/stable/reference/generated/numpy.isclose.html) function, which *"Returns a boolean array where two arrays are element-wise equal within a tolerance"* - ***note:*** we've not provided a tolerance in this example because it's a planned trajectory with precise numbers, but for as drilled surveys the likelihood of two sections being continuous with the default tolerance values is practically zero, but we'll discuss this later.
-  4. The result of the `numpy.isclose` function is an (n,3) boolean aray (i.e. [True, True, True] if the pairs of normal vectors), but we're interested in the whether all of the elements are equal so we use the [`numpy.all`](https://numpy.org/doc/stable/reference/generated/numpy.all.html) function to check each boolean matrix and see if all three values are *True* - the `axis=-1` parameter intructs the function to check row-wise, i.e. a single boolean for each pair of normal vectors.
+  4. The result of the `numpy.isclose` function is an (n,3) boolean aray (i.e. [True, True, True] if the pairs of normal vectors), but we're interested in the whether all of the elements are equal so we use the [`numpy.all`](https://numpy.org/doc/stable/reference/generated/numpy.all.html) function to check each boolean matrix and see if all three values are *True* - the `axis=-1` parameter instructs the function to check row-wise, i.e. a single boolean for each pair of normal vectors.
 
-The above operations are summarised in the flowchart below:
+The above operations are summarized in the flowchart below:
 
 ![image](/assets/images/2022-05-26-flowchart-normal-continuity.png)
 ***Flowchart describing the process of determining a well path's curve turn continuity from its vectors (inclination and azimuth)** - continuity is considered true when the elements of a survey station's normal vector are all equal to the normal of the previous survey station's normal vector.*
@@ -176,7 +176,7 @@ l_xs = np.linalg.norm(
 **Note:** when calculating ***L<sub>cs</sub>*** and ***L<sub>xs</sub>*** for each survey station, we need to reference the ***md*** and ***pos*** at the *beginning* of the current *curve turn* or *hold* section respectively, which is why there's some funky indexing going on above.
 
 ## Modified Tortuosity Index (MTI)
-The current ***TI*** is *not* dimesnionless and the reference TI ranges are expressed in *ft<sup>-1</sup>*. The ***Modified Tortuosity Index (MTI)*** proposes a tweak to the equation to make it dimensionless - results from surveys in *feet* can be compared directly to those from surveys in *meters* (or any other unit):
+The current ***TI*** is *not* dimensionless and the reference TI ranges are expressed in *ft<sup>-1</sup>*. The ***Modified Tortuosity Index (MTI)*** proposes a tweak to the equation to make it dimensionless - results from surveys in *feet* can be compared directly to those from surveys in *meters* (or any other unit):
 
 $$MTI_{n} = \frac{n}{n + 1} {\kappa}{L_{c}}\sum_{i = 1}^{n}\left[\left(\frac{L_{csi}}{L_{xsi}} - 1\right) \times \frac{1}{L_{csi}}\right]$$
 
@@ -255,9 +255,9 @@ The following [plotly] figure should pop up in your web browser:
 
 
 ## Tolerances and Station Frequency
-As elluded to earlier, in an actual well survey (versus a planned survey), it is probable that the normal vectors of consecutive stations are ***not*** exactly equal, which will result in a highly discontinuitous well trajectory. Further, the *md* interval between the trajectory stations (station frequency) is likely less regular for an as drilled well versus a planned well with e.g. a station every 30 meters or 100 feet.
+As eluded to earlier, in an actual well survey (versus a planned survey), it is probable that the normal vectors of consecutive stations are ***not*** exactly equal, which will result in a highly discontinuous well trajectory. Further, the *md* interval between the trajectory stations (station frequency) is likely less regular for an as drilled well versus a planned well with e.g. a station every 30 meters or 100 feet.
 
-It's simple enough to add a tolerance to the `numpy.isclose` function that is used in [welleng] to calculate the continuity and the default [welleng] `rtol` and `atol` values are suprisingly coarse at 1.0 each, i.e. when subtracting the normal elements from one another, values less than 1.0 are considered *close* and return a *True* boolean. What this practically means is that we're really checking for sign changes in the normal vectors, i.e. switching from up to down or from left to right - some future optimization here may be warranted.
+It's simple enough to add a tolerance to the `numpy.isclose` function that is used in [welleng] to calculate the continuity and the default [welleng] `rtol` and `atol` values are surprisingly coarse at 1.0 each, i.e. when subtracting the normal elements from one another, values less than 1.0 are considered *close* and return a *True* boolean. What this practically means is that we're really checking for sign changes in the normal vectors, i.e. switching from up to down or from left to right - some future optimization here may be warranted.
 
 ## Diagnostic Data
 The intent of this post is describe and walk through the implementation of the ***Modified Tortuosity Index*** so that it can be peer reviewed, replicated and tested. Diagnostic data is in [json] format for the worked examples is available [here](/assets/data/iscwsa-example-1-mti.json) to be used as diagnostic data for testing out your own implementation.
