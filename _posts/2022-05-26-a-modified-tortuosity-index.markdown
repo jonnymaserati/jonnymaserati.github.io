@@ -35,16 +35,16 @@ The [presentation] does a good job of describing a two-dimensional curve, but wh
 When planning and drilling wells these days, we almost exclusively use the *minimum curvature method*, which is essentially an arc path on the surface of a plane in three-dimensional space.
 
 ![image](/assets/images/2022-05-26-curvature-turn-3d.svg)
-***Curve turn of a well trajectory:** a continuous curve turn between points A and B occurs along a plane surface. The normal vectors of the plane *normA == normB* are represented by the blue arrows, the initial trajectory vector *vecA* by the green arrow and the final trajectory vector *vecB* the red arrow. Note that the normal vectors have been flipped to make the figure look better, but the principle holds.*
+***Curve turn of a well trajectory:** a continuous curve turn between points A and B occurs along a plane surface. The normal vectors of the plane $norm_{A} == norm_{B}$ are represented by the blue arrows, the initial trajectory vector *vecA* by the green arrow and the final trajectory vector $vec_{B}$ the red arrow. Note that the normal vectors have been flipped to make the figure look better, but the principle holds.*
 
-With reference to the above figure, given the unit vectors of the well trajectory at points A and B, the normal vector of the plane can be determined by the cross product of *vecA* and *vecB*:
+With reference to the above figure, given the unit vectors of the well trajectory at points A and B, the normal vector of the plane can be determined by the cross product of $vec_{A}$ and $vec_{B}$:
 
 $$norm = vec_{A} \times vec_{B}$$
 
 Interestingly, the normal vectors are not effected by radius of curvature of the turn (or the dog leg severity), which aligns with the standard ***TI*** methodology of defining curve turns.
 
 ## Generate a Well Trajectory
-Now that we've established that the normal vector at any point along a curve turn are identical, we can use this feature to determine the number of curve turns and the associated arc and curve lengths.
+Now that we've established that the normal vectors at any point along a curve turn are identical, we can use this feature to determine the number of curve turns and the associated arc and curve lengths.
 
 We need a simple well trajectory to try it out, so we'll quickly generate the [ISCWSA] standard well trajectory number 1:
 
@@ -182,7 +182,7 @@ The current ***TI*** is *not* dimensionless and the reference TI ranges are expr
 
 $$MTI_{n} = \frac{n}{n + 1} {\kappa}{L_{c}}\sum_{i = 1}^{n}\left[\left(\frac{L_{csi}}{L_{xsi}} - 1\right) \times \frac{1}{L_{csi}}\right]$$
 
-Where $\kappa$ is a constant for which 1 seems to be appropriate, but I've left this in since in the reference ***TI*** equation this value is $1\times{10^{7}}$ which is easily overlooked. Note that the $\frac{1}{L_{csi}}$ product has been added in the summation and the $L_{c}$ term is no longer an inverse, the intent of which is to make the ***MTI*** result dimensionless.
+Where \\(\kappa\\) is a constant for which 1 seems to be appropriate, but I've left this in since in the reference ***TI*** equation this value is \\(1\times{10^{7}}\\) which is easily overlooked. Note that the \\(\frac{1}{L_{csi}}\\) product has been added in the summation and the \\(L_{c}\\) term is no longer an inverse, the intent of which is to make the ***MTI*** result dimensionless.
 
 The next step is not intuitive (to me at least) as the summations need to be done per section. I'm not completely sure that the equation correct, but I can express it in [Python] code:
 
@@ -380,8 +380,6 @@ Running the above code will generate the following [plotly] figure:
 
 ![image](/assets/images/2022-05-26-plotly-figure-iscwsa-2-mti.png)
 ***ISCWSA Standard Well Trajectory Number 2 colored with MTI values***
-
-It's interesting to note that comparing example 2 with example 1, the maximum MTI values are similar but the distribution of them is very different, with example 1 peaking at the end of the initial build up section, whereas example 2 peaks at the end of the final build prior to the hold to target - this demonstrates very different risk profiles for the wells.
 
 ## Conclusion
 The ***Modified Tortuosity Index (MTI)*** is a dimensionless and natively three-dimensional method for determining a *Tortuosity Index* for a well trajectory (or any other sort of trajectoy or path). For the wells and drilling domain, the [welleng] library includes convenient methods for quickly generating the MTI, and code and diagnostic data is included in this post to facilitate testing, verification and further development.
