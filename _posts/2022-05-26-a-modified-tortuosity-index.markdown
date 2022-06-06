@@ -99,7 +99,7 @@ In order to split the well into sections, we'll need to determine the normals. T
 ```console
 >>> survey.normals
 ```
-Reviewing the array of normal vectors reveals that for the tangent sections of the well there are *no* normal vectors on account of there being no solution to a cross product of identical vectors. This is a useful result as it allows up to include these tangent sections as discrete curve turns (with infinite radius) where the arc length is equal to the chord length.
+Reviewing the array of normal vectors reveals that for the tangent sections of the well there are *no* normal vectors on account of there being no solution to a cross product of identical vectors. This is a useful result as it allows us to include these tangent sections as discrete curve turns (with infinite radius) where the arc length is equal to the chord length.
 
 Below is a plot of the well path with the curve turn normals added:
 
