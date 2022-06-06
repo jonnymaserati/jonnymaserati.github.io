@@ -252,6 +252,8 @@ survey_1 = we.survey.Survey(
     header=sh_1
 ).interpolate_survey(step=30)
 
+sections = survey_1._get_sections()
+
 data_1 = export_data(survey_1)
 
 # ISCWSA No. 2

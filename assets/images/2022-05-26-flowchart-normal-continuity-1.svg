@@ -1,0 +1,397 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   id="svg3760"
+   version="1.1"
+   viewBox="0 0 297 210"
+   height="210mm"
+   width="297mm">
+  <defs
+     id="defs3754">
+    <marker
+       style="overflow:visible;"
+       id="Arrow2Lend"
+       refX="0.0"
+       refY="0.0"
+       orient="auto">
+      <path
+         transform="scale(1.1) rotate(180) translate(1,0)"
+         d="M 8.7185878,4.0337352 L -2.2072895,0.016013256 L 8.7185884,-4.0017078 C 6.9730900,-1.6296469 6.9831476,1.6157441 8.7185878,4.0337352 z "
+         style="fill-rule:evenodd;stroke-width:0.625;stroke-linejoin:round;stroke:#000000;stroke-opacity:1;fill:#000000;fill-opacity:1"
+         id="path10310" />
+    </marker>
+    <symbol
+       id="InputOutput">
+      <title
+         id="title7748">Input/Output</title>
+      <desc
+         id="desc7750">General input/output functions.</desc>
+      <path
+         id="path7752"
+         style="stroke-width:0.52916664"
+         d="M 9.2604167,9.2604167 H 35.71875 L 30.427083,30.427083 H 3.96875 Z" />
+    </symbol>
+    <symbol
+       id="Process">
+      <title
+         id="title7741">Process</title>
+      <desc
+         id="desc7743">Any processing function.</desc>
+      <rect
+         id="rect7745"
+         style="stroke-width:0.52916664"
+         height="21.166666"
+         width="31.75"
+         y="9.260417"
+         x="3.96875" />
+    </symbol>
+  </defs>
+  <metadata
+     id="metadata3757">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     transform="translate(0,-87)"
+     id="layer1">
+    <path
+       id="path10247"
+       d="m 44.057635,193.39134 h 71.530355 c 0.39688,0 0.79375,0.0244 0.79375,0.0489 v 0"
+       style="fill:none;fill-rule:evenodd;stroke:#3f3f3f;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none" />
+    <use
+       height="100%"
+       width="100%"
+       y="0"
+       x="0"
+       xlink:href="#InputOutput"
+       style="fill:#e1e1e1;stroke:#4b4b4b;fill-opacity:1;stroke-width:0.73847376;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       transform="matrix(2.33949,0,0,3.1352246,-2.3666194,131.17672)"
+       id="use10077" />
+    <text
+       id="text3764"
+       y="180.63689"
+       x="32.608646"
+       style="font-style:normal;font-weight:normal;font-size:3.90941095px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.09773527"
+       xml:space="preserve"><tspan
+         style="stroke-width:0.09773527"
+         y="180.63689"
+         x="32.608646"
+         id="tspan3762">pos<tspan
+   id="tspan3778"
+   style="font-size:2.54111695px;baseline-shift:sub;stroke-width:0.09773527">1</tspan></tspan><tspan
+         id="tspan3766"
+         style="stroke-width:0.09773527"
+         y="185.52365"
+         x="32.608646">pos<tspan
+   id="tspan3780"
+   style="font-size:2.54111695px;baseline-shift:sub;stroke-width:0.09773527">2</tspan></tspan><tspan
+         id="tspan3768"
+         style="stroke-width:0.09773527"
+         y="190.41042"
+         x="32.608646">pos<tspan
+   id="tspan3782"
+   style="font-size:2.54111695px;baseline-shift:sub;stroke-width:0.09773527">3</tspan></tspan><tspan
+         id="tspan3770"
+         style="stroke-width:0.09773527"
+         y="195.29718"
+         x="32.608646">    .</tspan><tspan
+         id="tspan3772"
+         style="stroke-width:0.09773527"
+         y="200.18394"
+         x="32.608646">    .</tspan><tspan
+         id="tspan3774"
+         style="stroke-width:0.09773527"
+         y="205.07071"
+         x="32.608646">    .</tspan><tspan
+         id="tspan3908"
+         style="stroke-width:0.09773527"
+         y="209.95747"
+         x="32.608646">pos<tspan
+   id="tspan3910"
+   style="font-size:2.54111695px;baseline-shift:sub;stroke-width:0.09773527">n-2</tspan></tspan><tspan
+         id="tspan3786"
+         style="stroke-width:0.09773527"
+         y="214.84424"
+         x="32.608646">pos<tspan
+   id="tspan3788"
+   style="font-size:2.54111695px;baseline-shift:sub;stroke-width:0.09773527">n-1</tspan></tspan><tspan
+         id="tspan3776"
+         style="stroke-width:0.09773527"
+         y="219.731"
+         x="32.608646">pos<tspan
+   id="tspan3784"
+   style="font-size:2.54111695px;baseline-shift:sub;stroke-width:0.09773527">n</tspan></tspan></text>
+    <text
+       id="text3764-3"
+       y="180.66824"
+       x="51.693886"
+       style="font-style:normal;font-weight:normal;font-size:3.90941095px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.09773527"
+       xml:space="preserve"><tspan
+         style="stroke-width:0.09773527"
+         y="180.66824"
+         x="51.693886"
+         id="tspan3762-6">vec<tspan
+   id="tspan3778-7"
+   style="font-size:2.54111695px;baseline-shift:sub;stroke-width:0.09773527">1</tspan></tspan><tspan
+         id="tspan3766-5"
+         style="stroke-width:0.09773527"
+         y="185.55501"
+         x="51.693886">vec<tspan
+   id="tspan3780-3"
+   style="font-size:2.54111695px;baseline-shift:sub;stroke-width:0.09773527">2</tspan></tspan><tspan
+         id="tspan3768-5"
+         style="stroke-width:0.09773527"
+         y="190.44177"
+         x="51.693886">vec<tspan
+   id="tspan3782-6"
+   style="font-size:2.54111695px;baseline-shift:sub;stroke-width:0.09773527">3</tspan></tspan><tspan
+         id="tspan3770-2"
+         style="stroke-width:0.09773527"
+         y="195.32854"
+         x="51.693886">    .</tspan><tspan
+         id="tspan3772-9"
+         style="stroke-width:0.09773527"
+         y="200.2153"
+         x="51.693886">    .</tspan><tspan
+         id="tspan3774-1"
+         style="stroke-width:0.09773527"
+         y="205.10207"
+         x="51.693886">    .</tspan><tspan
+         id="tspan3786-2"
+         style="stroke-width:0.09773527"
+         y="209.98883"
+         x="51.693886">vec<tspan
+   id="tspan3922"
+   style="font-size:2.54111695px;baseline-shift:sub;stroke-width:0.09773527">n-2</tspan></tspan><tspan
+         id="tspan3915"
+         style="stroke-width:0.09773527"
+         y="214.8756"
+         x="51.693886">vec<tspan
+   id="tspan3788-7"
+   style="font-size:2.54111695px;baseline-shift:sub;stroke-width:0.09773527">n-1</tspan></tspan><tspan
+         id="tspan3776-0"
+         style="stroke-width:0.09773527"
+         y="219.76236"
+         x="51.693886">vec<tspan
+   id="tspan3784-9"
+   style="font-size:2.54111695px;baseline-shift:sub;stroke-width:0.09773527">n</tspan></tspan></text>
+    <text
+       id="text4089-5"
+       y="168.58812"
+       x="21.951548"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:3.90941095px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.09773527"
+       xml:space="preserve"><tspan
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';stroke-width:0.09773527"
+         y="168.58812"
+         x="21.951548"
+         id="tspan4087-4">Well Trajectory Stations</tspan></text>
+    <path
+       id="path10249"
+       d="m 116.38174,193.44021 h 102.80565 c 0.39687,0 0.79375,0 0.79375,0 v 0"
+       style="fill:none;fill-rule:evenodd;stroke:#3f3f3f;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+    <use
+       height="100%"
+       width="100%"
+       y="0"
+       x="0"
+       xlink:href="#Process"
+       style="fill:#e1e1e1;stroke:#4b4b4b;fill-opacity:1;stroke-width:0.92854225;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       transform="matrix(1.4775726,0,0,3.1398422,87.06116,131.13397)"
+       id="use10101" />
+    <text
+       id="text3764-3-3"
+       y="182.59671"
+       x="106.58627"
+       style="font-style:normal;font-weight:normal;font-size:3.90941095px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.09773527"
+       xml:space="preserve"><tspan
+         style="stroke-width:0.09773527"
+         y="182.59671"
+         x="106.58627"
+         id="tspan3762-6-6">norm<tspan
+   id="tspan3778-7-0"
+   style="font-size:2.54111695px;baseline-shift:sub;stroke-width:0.09773527">1,2</tspan></tspan><tspan
+         id="tspan3768-5-6"
+         style="stroke-width:0.09773527"
+         y="187.48347"
+         x="106.58627">norm<tspan
+   id="tspan3780-3-2"
+   style="font-size:2.54111695px;baseline-shift:sub;stroke-width:0.09773527">2,3</tspan></tspan><tspan
+         id="tspan3770-2-8"
+         style="stroke-width:0.09773527"
+         y="192.37024"
+         x="106.58627">    .</tspan><tspan
+         id="tspan3772-9-7"
+         style="stroke-width:0.09773527"
+         y="197.257"
+         x="106.58627">    .</tspan><tspan
+         id="tspan3774-1-9"
+         style="stroke-width:0.09773527"
+         y="202.14377"
+         x="106.58627">    .</tspan><tspan
+         id="tspan3906"
+         style="stroke-width:0.09773527"
+         y="207.03053"
+         x="106.58627">    .</tspan><tspan
+         id="tspan3924"
+         style="stroke-width:0.09773527"
+         y="211.9173"
+         x="106.58627">norm<tspan
+   id="tspan3926"
+   style="font-size:2.54111695px;baseline-shift:sub;stroke-width:0.09773527">n-2, n-1</tspan></tspan><tspan
+         id="tspan3776-0-2"
+         style="stroke-width:0.09773527"
+         y="216.80406"
+         x="106.58627">norm<tspan
+   id="tspan3788-7-0"
+   style="font-size:2.54111695px;baseline-shift:sub;stroke-width:0.09773527">n-1, n</tspan></tspan></text>
+    <text
+       id="text4089"
+       y="168.40662"
+       x="97.211182"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:3.90941095px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.09773527"
+       xml:space="preserve"><tspan
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';stroke-width:0.09773527"
+         y="168.40662"
+         x="97.211182"
+         id="tspan4087">Calculate normals</tspan></text>
+    <use
+       height="100%"
+       width="100%"
+       y="0"
+       x="0"
+       xlink:href="#Process"
+       style="fill:#e1e1e1;stroke:#4b4b4b;fill-opacity:1;stroke-width:0.538517;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       transform="matrix(4.3929204,0,0,3.1398422,134.13204,131.13396)"
+       id="use10143" />
+    <text
+       id="text3764-3-3-7"
+       y="184.2175"
+       x="158.8526"
+       style="font-style:normal;font-weight:normal;font-size:4.43271828px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;baseline-shift:baseline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.09773527"
+       xml:space="preserve"><tspan
+         id="tspan3768-5-6-2"
+         style="baseline-shift:baseline;stroke-width:0.09773527"
+         y="184.2175"
+         x="158.8526">norm<tspan
+   id="tspan3983"
+   style="font-size:2.88126659px;baseline-shift:sub;stroke-width:0.09773527">1,2</tspan> == norm<tspan
+   style="font-size:2.88126659px;baseline-shift:sub;stroke-width:0.09773527"
+   id="tspan3780-3-2-2">2,3</tspan></tspan><tspan
+         id="tspan3770-2-8-8"
+         style="baseline-shift:baseline;stroke-width:0.09773527"
+         y="189.75839"
+         x="158.8526">              .</tspan><tspan
+         id="tspan3772-9-7-9"
+         style="baseline-shift:baseline;stroke-width:0.09773527"
+         y="195.2993"
+         x="158.8526">              .</tspan><tspan
+         id="tspan3774-1-9-7"
+         style="baseline-shift:baseline;stroke-width:0.09773527"
+         y="200.84019"
+         x="158.8526">              .</tspan><tspan
+         id="tspan3992"
+         style="baseline-shift:baseline;stroke-width:0.09773527"
+         y="206.38109"
+         x="158.8526">              .</tspan><tspan
+         id="tspan3776-0-2-2"
+         style="baseline-shift:baseline;stroke-width:0.09773527"
+         y="211.92198"
+         x="158.8526">norm<tspan
+   id="tspan3988"
+   style="font-size:2.88126659px;baseline-shift:sub;stroke-width:0.09773527">n-2,n-1</tspan> == norm<tspan
+   id="tspan3990"
+   style="font-size:2.88126659px;baseline-shift:sub;stroke-width:0.09773527">n-1, n</tspan></tspan></text>
+    <text
+       id="text3764-3-3-7-3"
+       y="185.10274"
+       x="222.95271"
+       style="font-style:normal;font-weight:normal;font-size:4.43271828px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;baseline-shift:baseline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.09773527"
+       xml:space="preserve"><tspan
+         id="tspan3770-2-8-8-7"
+         style="baseline-shift:baseline;stroke-width:0.09773527"
+         y="185.10274"
+         x="222.95271">[True, True, True]</tspan><tspan
+         id="tspan3772-9-7-9-8"
+         style="baseline-shift:baseline;stroke-width:0.09773527"
+         y="190.64363"
+         x="222.95271">              .</tspan><tspan
+         id="tspan3774-1-9-7-4"
+         style="baseline-shift:baseline;stroke-width:0.09773527"
+         y="196.18454"
+         x="222.95271">              .</tspan><tspan
+         id="tspan3992-5"
+         style="baseline-shift:baseline;stroke-width:0.09773527"
+         y="201.72543"
+         x="222.95271">              .</tspan><tspan
+         id="tspan4046"
+         style="baseline-shift:baseline;stroke-width:0.09773527"
+         y="207.26633"
+         x="222.95271">              .</tspan><tspan
+         id="tspan3776-0-2-2-0"
+         style="baseline-shift:baseline;stroke-width:0.09773527"
+         y="212.80722"
+         x="222.95271">[True, True, True]<tspan
+   id="tspan3990-6"
+   style="font-size:2.88126659px;baseline-shift:sub;stroke-width:0.09773527" /></tspan><tspan
+         id="tspan4044"
+         style="baseline-shift:baseline;stroke-width:0.09773527"
+         y="218.34813"
+         x="222.95271" /></text>
+    <text
+       id="text3764-3-3-7-3-1"
+       y="185.10274"
+       x="272.58109"
+       style="font-style:normal;font-weight:normal;font-size:4.43271828px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;baseline-shift:baseline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.09773527"
+       xml:space="preserve"><tspan
+         id="tspan3770-2-8-8-7-0"
+         style="baseline-shift:baseline;stroke-width:0.09773527"
+         y="185.10274"
+         x="272.58109">[True]</tspan><tspan
+         id="tspan3772-9-7-9-8-6"
+         style="baseline-shift:baseline;stroke-width:0.09773527"
+         y="190.64363"
+         x="272.58109">     .</tspan><tspan
+         id="tspan3774-1-9-7-4-3"
+         style="baseline-shift:baseline;stroke-width:0.09773527"
+         y="196.18454"
+         x="272.58109">     .</tspan><tspan
+         id="tspan3992-5-2"
+         style="baseline-shift:baseline;stroke-width:0.09773527"
+         y="201.72543"
+         x="272.58109">     .</tspan><tspan
+         id="tspan4046-0"
+         style="baseline-shift:baseline;stroke-width:0.09773527"
+         y="207.26633"
+         x="272.58109">     .</tspan><tspan
+         id="tspan3776-0-2-2-0-6"
+         style="baseline-shift:baseline;stroke-width:0.09773527"
+         y="212.80722"
+         x="272.58109">[True]</tspan><tspan
+         id="tspan4044-5"
+         style="baseline-shift:baseline;stroke-width:0.09773527"
+         y="218.34813"
+         x="272.58109" /></text>
+    <text
+       id="text4089-5-7"
+       y="168.41321"
+       x="159.90465"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:3.90941095px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.09773527"
+       xml:space="preserve"><tspan
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';stroke-width:0.09773527"
+         y="168.41321"
+         x="159.90465"
+         id="tspan4087-4-6">Compare normal elements and resolve to single boolean</tspan></text>
+  </g>
+</svg>
