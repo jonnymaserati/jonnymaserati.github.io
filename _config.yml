@@ -29,6 +29,7 @@ github_username:  jonnymaserati
 avatar: https://avatars.githubusercontent.com/u/41046859?s=460&u=845b74e5ad4437fd1f6f2634b004b16bd0d2f48b&v=4
 show_excerpts: true
 markdown: kramdown
+math_engine: mathjax
 
 # Build settings
 # theme: jekyll-theme-cayman
