@@ -4,6 +4,9 @@
     <meta charset="utf-8">
     <title>{{ page.title }}</title>
     <link rel="stylesheet" href="/assets/css/style.css">
+    {% if page.use_math %}
+    {% include mathjax_support.html %}
+    {% endif %}
   </head>
   {%- include head.html -%}
 
