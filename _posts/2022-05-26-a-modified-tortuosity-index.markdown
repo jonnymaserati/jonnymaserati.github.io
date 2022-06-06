@@ -35,9 +35,9 @@ The [presentation] does a good job of describing a two-dimensional curve, but wh
 When planning and drilling wells these days, we almost exclusively use the *minimum curvature method*, which is essentially an arc path on the surface of a plane in three-dimensional space.
 
 ![image](/assets/images/2022-05-26-curvature-turn-3d.svg)
-***Curve turn of a well trajectory:** a continuous curve turn between points A and B occurs along a plane surface. The normal vectors of the plane $norm_{A} == norm_{B}$ are represented by the blue arrows, the initial trajectory vector *vecA* by the green arrow and the final trajectory vector $vec_{B}$ the red arrow. Note that the normal vectors have been flipped to make the figure look better, but the principle holds.*
+***Curve turn of a well trajectory:** a continuous curve turn between points A and B occurs along a plane surface. The normal vectors of the plane \\(norm_{A} == norm_{B}\\) are represented by the blue arrows, the initial trajectory vector \\(vec_{A}\\) by the green arrow and the final trajectory vector \\(vec_{B}\\) the red arrow. Note that the normal vectors have been flipped to make the figure look better, but the principle holds.*
 
-With reference to the above figure, given the unit vectors of the well trajectory at points A and B, the normal vector of the plane can be determined by the cross product of $vec_{A}$ and $vec_{B}$:
+With reference to the above figure, given the unit vectors of the well trajectory at points A and B, the normal vector of the plane can be determined by the cross product of \\(vec_{A}\\) and \\(vec_{B}\\):
 
 $$norm = vec_{A} \times vec_{B}$$
 
