@@ -13,14 +13,17 @@ The Drilling ***Tortuosity Index (TI)*** is a useful method for determining the 
 This post describes the ***Modified Tortuosity Index (MTI)*** that proposes modifications to the ***Tortuosity Index*** to make it inherently three-dimensional and dimensionless and provides details and data on how to apply the method using the [Python] library [welleng].
 
 ## Disclaimer
-The following method is experimental and has yet to be thoroughly tested - the work presented is that of an enthusiastic amateur, with no professional or otherwise affiliations. As such, please use with caution and do your own research and testing - my only request is that, in the spirit of [open source](https://en.wikipedia.org/wiki/Open_source) that you report back your own findings either via the comments below or via the [welleng] repository. The license is permissive - the only requirement is that you reference the source if you use the method or code.
+The following method is experimental and has yet to be thoroughly tested - the work presented is that of an enthusiastic amateur, with no professional or otherwise affiliations. As such, please use with caution and do your own research and testing - the only request is that, in the spirit of [open source](https://en.wikipedia.org/wiki/Open_source) you report back your own findings either via the comments below or via the [welleng] repository. The license is permissive - the only requirement is that you reference the source if you use the method or code.
 
 ## Background
 The Tortuosity Index method that is generally used in the Drilling community is derived from the medical industry. This method was adapted and developed for well trajectories by **Pradeep Ashok et al** at The University of Texas and presented at the [International Association of Directional Drilling](https://www.iadd-intl.org/media/files/files/47d68cb4/iadd-luncheon-february-22-2018-v2.pdf). Several SPE papers on the subject have subsequently been published.
 
 The generally accepted equation for the drilling ***Tortuosity Index (TI)*** is:
 
-$$TI_{inc/azi} = \frac{n}{n + 1} \frac{1}{L_{c}}\sum_{i = 1}^{n}\left(\frac{L_{csi}}{L_{xsi}} - 1\right)$$
+{% raw %}
+$$TI_{inc/azi} = \frac{n}{n + 1} \frac{1}{L_{c}}\sum_{i = 1}^{n}\left(\frac{L_{csi}}{L_{xsi}} - 1\right]$$
+{% endraw %}
+
 $$TI_{3D} = \sqrt{\left(TI_{inc}\right)^{2} + \left(TI_{azi}\right)^{2}}$$
 
 where ***n*** is the number of curve turns, ***L<sub>csi</sub>*** is the arc length of the curve turn, ***L<sub>xsi</sub>*** is the chord length of the curve turn and ***L<sub>c</sub>*** is the total curve length.
