@@ -184,7 +184,7 @@ $$MTI_{n} = \frac{n}{n + 1} {\kappa}{L_{c}}\sum_{i = 1}^{n}\left[\left(\frac{L_{
 
 Where \\(\kappa\\) is a constant for which 1 seems to be appropriate, but I've left this in since in the reference ***TI*** equation this value is \\(1\times{10^{7}}\\) which is easily overlooked. Note that the \\(\frac{1}{L_{csi}}\\) product has been added in the summation and the \\(L_{c}\\) term is no longer an inverse, the intent of which is to make the ***MTI*** result dimensionless.
 
-The next step is not intuitive (to me at least) as the summations need to be done per section. I'm not completely sure that the equation correct, but I can express it in [Python] code:
+The next step is not intuitive (to me at least) as the summations need to be done per section. I'm not completely sure that the above equation correctly represents this, but I *can* express it in [Python] code:
 
 ```python
 # set the value for the constant kappa
