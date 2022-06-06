@@ -21,9 +21,9 @@ The Tortuosity Index method that is generally used in the Drilling community is 
 
 The generally accepted equation for the drilling ***Tortuosity Index (TI)*** is:
 
-{% raw %}
-    $$TI_{inc/azi} = \frac{n}{n + 1} \frac{1}{L_{c}}\sum_{i = 1}^{n}\left(\frac{L_{csi}}{L_{xsi}} - 1\right]$$
-{% endraw %}
+$$
+TI_{inc/azi} = \frac{n}{n + 1} \frac{1}{L_{c}}\sum_{i = 1}^{n}\left(\frac{L_{csi}}{L_{xsi}} - 1\right]
+$$
 
 $$TI_{3D} = \sqrt{\left(TI_{inc}\right)^{2} + \left(TI_{azi}\right)^{2}}$$
 
