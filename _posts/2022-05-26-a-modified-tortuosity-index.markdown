@@ -2,7 +2,7 @@
 layout: post
 title:  "A Modified Tortuosity Index"
 author: Jonny Corcutt
-tags: python well drilling torque drag engineering visualization plotly
+tags: python well drilling modified tortuosity engineering visualization plotly
 use_math: true
 ---
 ![image](/assets/images/chris-henry-YOEPow9w9Hk-unsplash.jpg)
