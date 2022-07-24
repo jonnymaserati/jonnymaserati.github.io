@@ -435,6 +435,80 @@ def _maximum_curvature(md1, md_total, dls, dls_tortuosity, vec1, vec2):
 
 #     return survey_new
 
+def _maximum_curvature(self, dls_noise=1.0, figure=False):
+    """
+    Create a well trajectory using the Maximum Curvature method.
+
+    Parameters
+    ----------
+    survey: welleng.Survey.survey object
+    dls_noise: float
+        The additional Dog Leg Severity (DLS) in deg/30m used to calculate the
+        curvature for the initial section of the survey interval.
+    
+    Returns
+    -------
+    survey_new: welleng.Survey.survey object
+        A revised survey object calculated using the Minimum Curvature method
+        with updated survey positions and additional mid-point stations.
+    """
+
+    dls_effective = self.dls + dls_noise
+    radius_effective = we.utils.radius_from_dls(dls_effective)
+
+    dogleg1 = (
+        (self.delta_md / radius_effective) / 2
+    )
+
+    radius_effective = np.where(
+        dogleg1 > np.pi,
+        self.delta_md * 4 / (2 * np.pi),
+        radius_effective
+    )
+
+    arc1 = [
+        we.utils.get_arc(dogleg, _radius_effective, toolface, vec=vec)
+        for dogleg, _radius_effective, toolface, vec in zip(
+            dogleg1[1:], radius_effective[1:], self.toolface[:-1],
+            self.vec_nev[:-1]
+        )
+    ]
+
+    _survey_new = np.array([
+        [row[-1], *np.degrees(we.utils.get_angles(row[1], nev=True))[0]]
+        for row in arc1
+    ])
+    _survey_new[:, 0] += self.md[:-1]
+
+    survey_new = np.zeros(shape=(len(_survey_new) * 2 + 1, 3))
+    survey_new[:-1] = np.stack(
+        (self.survey_deg[:-1].T, _survey_new.T),
+        axis=1
+    ).T.reshape(-1, 3)
+    survey_new[-1] = self.survey_deg[-1]
+
+    # Update the new survey header as the new azimuth reference is 'grid'.
+    sh = self.header
+    sh.azi_reference = 'grid'
+
+    # Create a new Survey instance
+    survey = we.survey.Survey(
+        md=survey_new[:, 0],
+        inc=survey_new[:, 1],
+        azi=survey_new[:, 2],
+        header=sh,
+        start_xyz=self.start_xyz,
+        start_nev=self.start_nev
+    )
+
+    # Update the interpolated property to keep track of the original survey
+    # stations.
+    survey.interpolated = np.full_like(survey.md, True)
+    survey.interpolated[::2] = self.interpolated
+
+
+    return survey
+
 
 def maximum_curvature(survey, dls_noise=1.0, figure=False):
     """
@@ -453,6 +527,11 @@ def maximum_curvature(survey, dls_noise=1.0, figure=False):
         A revised survey object calculated using the Minimum Curvature method
         with updated survey positions and additional mid-point stations.
     """
+
+    toolface = []
+    radius_effectives = []
+    arcs = []
+    doglegs = []
 
     # Iterate through survey station pairs.
     for i, ((md2, vec2, dls), (md1, vec1, survey1)) in enumerate(zip(
@@ -488,7 +567,7 @@ def maximum_curvature(survey, dls_noise=1.0, figure=False):
 
         # Calculate the new initial DLS and convert to a curvature radius.
         dls_effective = dls + dls_noise
-        radius = we.utils.radius_from_dls(dls)
+        # radius = we.utils.radius_from_dls(dls)
         radius_effective = we.utils.radius_from_dls(dls_effective)
 
         # Manage where the path is straight.
@@ -520,6 +599,11 @@ def maximum_curvature(survey, dls_noise=1.0, figure=False):
         _survey_new.append([
             md2, *np.degrees(we.utils.get_angles(vec2, nev=True))[0]
         ])
+
+        toolface.append(toolface1)
+        radius_effectives.append(radius_effective)
+        arcs.append(arc1)
+        doglegs.append(dogleg1)
     
     # Transform array to Series of md, inc and azi
     md, inc, azi = np.vstack(_survey_new).T
@@ -611,8 +695,8 @@ survey = get_iscwsa_example_2()
 #     x=1, line_width=3, line_color='green'
 # )
 
-
-survey_maxc = maximum_curvature(survey.interpolate_survey(step=1), 1.0, figure=True)
+survey_maxc = survey.modified_tortuosity_index(data=True)
+survey_maxc = _maximum_curvature(survey.interpolate_survey(step=1.0), 1.0, figure=False)
 
 # with open('assets/data/2022_06_11_BK050073.json') as json_file:
 #     data = json.load(json_file)

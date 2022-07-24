@@ -53,7 +53,7 @@ def maximum_curvature(survey, dls_noise=1.0):
     
     Returns
     -------
-    survey_new: welleng.Survey.survey object
+    survey_new: welleng.survey.Survey object
         A revised survey object calculated using the Minimum Curvature method
         with updated survey positions and additional mid-point stations.
     """
@@ -149,7 +149,7 @@ def maximum_curvature(survey, dls_noise=1.0):
 
 We now have a function for determining mid-points between MWD survey station pairs, adding a defined increment of DLS for the first sub-interval and using the Minimum Curvature method to calculate the second half of the path back to the final survey station.
 
-Note that the function uses the [welleng] library as a dependency, but can be easily modified to process raw survey data.
+Note that the function uses the [welleng] library as a dependency, but can be easily modified to process raw survey data. Also, a vectorized (quicker) version of this code has been added to [welleng] version 0.4.13 as a `Survey.maximum_curvature()` method and the `Survey.modified_tortuosity_index()` method has been updated to apply by default the three step process and default values discussed in this post.
 
 ## Applying Maximum Curvature to a Sparse Survey
 Let's apply the Maximum Curvature method to a fictitious sparse survey. For consistency we'll again use the ISCWSA Example 2 trajectory which is generated with the following function:
