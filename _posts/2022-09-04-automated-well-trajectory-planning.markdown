@@ -37,7 +37,7 @@ Typically, rules used during the construction phase of the trajectories are used
   - **Automated Well Design workflows:** AWTP can be used to initiate full-stack automated Well Design work-flows, porting viable trajectories to Well Design software like [Oliasoft] via their Application Programming Interfaces (API) for optimizing e.g. casing seat locations taking account of kick tolerances or more advanced trajectory optimization using torque and drag and hydraulics modules.
 
 ## References
-[1]: [Jon Gustav Vabø; Evan Thomas Delaney; Tom Savel; Norbert Dolle, "Novel Application of Artificial Intelligence with Potential to Transform Well Planning Workflows on the Norwegian Continental Shelf." Paper presented at the SPE Annual Technical Conference and Exhibition, Dubai, UAE, September 2021. https://doi.org/10.2118/206339-MS](https://doi.org/10.2118/206339-MS)
+[1] [Jon Gustav Vabø; Evan Thomas Delaney; Tom Savel; Norbert Dolle, "Novel Application of Artificial Intelligence with Potential to Transform Well Planning Workflows on the Norwegian Continental Shelf." Paper presented at the SPE Annual Technical Conference and Exhibition, Dubai, UAE, September 2021. https://doi.org/10.2118/206339-MS](https://doi.org/10.2118/206339-MS)
 
 [welleng]: https://github.com/jonnymaserati/welleng
 [ISCWSA]: https://www.iscwsa.net/
