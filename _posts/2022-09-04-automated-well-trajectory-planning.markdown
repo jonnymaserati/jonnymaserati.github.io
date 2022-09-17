@@ -31,6 +31,7 @@ Typically, rules used during the construction phase of the trajectories are used
 
 
 ## What could AWTP be used for?
+  - **Real-time trajectory updates:** AWTP is fast and scalable and can be integrated into the real-time pipeline for optimizing the well trajectory on the fly based on the feedback loop of real-time data.
   - **Trajectory production optimization:** AWTP can generate a range of viable reservoir section trajectories that can be post-processed in subsurface models to optimize the likely productivity of well - AI methods have been tested for this purpose, but often the trajectories generated are sub-optimal for drilling.
   - **Automated Relief Well Trajectory Planning:** AWTP can be utilized to determine relief well trajectories that offer the highest probability of intersecting the target wellbore at the desired depth and parameters, while avoiding subsurface hazards.
   - **Position uncertainty optimization:** AWTP can be utilized for determining trajectories with the highest likelihood of being landed at the desired subsurface target, taking account of both the well trajectory and subsurface location uncertainties.
