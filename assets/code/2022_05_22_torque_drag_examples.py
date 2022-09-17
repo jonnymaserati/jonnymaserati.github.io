@@ -62,7 +62,6 @@ def example_1():
     wellbore.add_section(
         od=9+5/8, id=8.5,
         bottom=2984 * 0.7,
-        unit_weight=(68 * ureg('lbs / ft').to('kg / meters')).m,
         coeff_friction_sliding=0.28,
         name='production 9 5/8" casing'
     )
