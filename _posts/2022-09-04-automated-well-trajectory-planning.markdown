@@ -6,7 +6,7 @@ tags: python well drilling modified machine learning automation engineering visu
 use_math: false
 ---
 ![image](/assets/images/2022-09-04-simulated-automated-well-trajectory-planning.png)
-Automated well trajectory planning proof of concept for simulated in-fill drilling of an unconventional shale development, with shallow hazard, well-bore instability (inclination constraints), anti-collision (offset wells), lease lines, fracture zone avoidance, dogleg severity and target inclination and azimuth rules and constraints.
+Automated well trajectory planning proof of concept for simulated in-fill drilling of an unconventional shale development, with shallow hazard, well-bore instability (inclination constraints), anti-collision (blue offset wells), lease lines, fracture zone avoidance, dogleg severity and target inclination and azimuth rules and constraints. Dark grey wells have successfully *grown* their way from the green surface location to the red target, abiding by the defined rules and constraints.
 
 ## What is AWTP?
 Automated well Trajectory Planning (AWTP) is the process of generating well trajectory profiles for a given scenario, while honoring a set of rules and/or constraints. As there are an infinite number of solutions for connecting two points in three dimensional space, post processing of the results is necessary to quickly filter down a set of *best* trajectories.
