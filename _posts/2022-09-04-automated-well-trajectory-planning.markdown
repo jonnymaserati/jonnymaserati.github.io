@@ -26,7 +26,7 @@ Typically, rules used during the construction phase of the trajectories are used
   - **Trajectory planning in highly congested environments:** AWTP has been utilized on the Norwegian Continental shelf<sup>[1]</sup>, where manually planning trajectories that avoid collision is increasingly difficult and inefficient using traditional methods.
   - **Slot to target optimization:** AWTP has been utilized in the Middle East for determining the *best* surface locations for given subsurface targets and for optimizing the location of surface facilities.
   - **Subsurface target selection:** AWTP has been utilized in South East Asia for testing combinations of subsurface targets to optimize well placement for wells with multi-zone objectives, often resulting in combinations of targets that had not been considered by the subsurface team.
-  - **Trajectory drilling optimization:** AWTP has been used in the Middle East for optimizing complex three-dimensional extended reach trajectories, with post-processing and filtering based upon metrics such as [Modified Tortuosity Index](https://jonnymaserati.github.io/2022/06/19/modified-tortuosity-index-survey-frequency.html).
+  - **Trajectory drilling optimization:** AWTP has been used in the Middle East for optimizing complex three-dimensional extended reach trajectories<sup>[2]</sup>, with post-processing and filtering based upon metrics such as [Modified Tortuosity Index](https://jonnymaserati.github.io/2022/06/19/modified-tortuosity-index-survey-frequency.html).
   - **Feasibility and scoping of wells:** AWTP allows non-wells/drilling (e.g. subsurface) disciplines to scope wells for project feasibility (having worked collaboratively to determine an appropriate set of rules/constraints for the given environment).
 
 
@@ -40,6 +40,8 @@ Typically, rules used during the construction phase of the trajectories are used
 
 ## References
 [1] [Jon Gustav Vabø; Evan Thomas Delaney; Tom Savel; Norbert Dolle, "Novel Application of Artificial Intelligence with Potential to Transform Well Planning Workflows on the Norwegian Continental Shelf." Paper presented at the SPE Annual Technical Conference and Exhibition, Dubai, UAE, September 2021. https://doi.org/10.2118/206339-MS](https://doi.org/10.2118/206339-MS)
+
+[2] [Laila Zayed Almarzooqi; Rahul Mark Fonseca; Hani Ahmed Buhindi; Ebtesam Khaled Binabadat; Imad Al Hamlawi; Norbert Dolle; Olga Meshcheriakova, "Transforming Well Planning through an AI-Assisted Well Trajectory Optimization Approach Applied to an Offshore Field in the Middle East". Paper presented at the ADIPEC, Abu Dhabi, UAE, October 2022. https://doi.org/10.2118/211041-MS](https://doi.org/10.2118/211041-MS)
 
 [welleng]: https://github.com/jonnymaserati/welleng
 [ISCWSA]: https://www.iscwsa.net/
